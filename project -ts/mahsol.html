@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img  src="" alt="sneaker" />
+      </div>
+      <div class="flex flex-col justify-center gap-7 px-3 py-3">
+        <div class="flex items-center justify-between">
+          <p class="font-bold text-xl"></p>
+          <img src="img/heart.svg" alt="" />
+        </div>
+        <div class="flex items-center gap-4">
+          <div>
+            <button class="bg-gray-300 p-2 rounded-lg text-sm"></button>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4 h-4" alt="" />
+            <p></p>
+          </div>
+        </div>
+        <hr />
+        <div class="flex flex-col gap-3">
+          <p class="font-semibold text-lg">Description</p>
+          <p class="text-gray-800 overflow-y-hidden max-h-11">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quod in
+            quisquam, laborum eligendi
+            <a class="font-bold" href="#">view more...</a> dolores iusto enim
+            dicta voluptates maxime vitae, ea nesciunt molestias quibusdam eum
+            ipsum. Accusamus, cumque!
+          </p>
+          <div class="flex items-center justify-between gap-8">
+            <div class="flex flex-col gap-2">
+              <p class="font-bold">size</p>
+              <div class="flex gap-2 items-start"></div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <p class="font-bold">color</p>
+              <div class="flex gap-2 items-start w-44 overflow-x-auto"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-5 total">
+            <p class="font-semibold">Quantity</p>
+            <div
+              class="bg-gray-300 flex items-center justify-center rounded-full gap-5 px-7 py-2"
+              id="catch"
+            >
+              <p class="font-semibold text-xl" data-action="decrease">-</p>
+              <p class="font-semibold text-xl" id="quantity">0</p>
+              <p class="font-semibold text-xl" data-action="increase">+</p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="flex items-center gap-5 pb-2">
+          <div class="flex flex-col items-center ">
+            <p class="text-gray-500  text-nowrap">Total price</p>
+            <p class="font-extrabold text-xl" id="totalPrice">$0.00</p>
+          </div>
+          <button
+            class="bg-black rounded-full w-80 py-2 text-white flex items-center justify-center gap-3"
+          >
+            <img
+              class="w-7 text-white font-bold"
+              src="img/Untitled-–-Figma.png"
+              alt=""
+            />
+            <p>Add to cart</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.ts"></script>
+    <script type="module" src="script/mahsol.ts"></script>
+  </body>
+</html>

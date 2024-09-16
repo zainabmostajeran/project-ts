@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex flex-col justify-center gap-7 px-3 py-3">
+        <div>
+         <a href="http://localhost:5173"><img src="img/arrow-left-short.svg" alt="" /></a>
+        </div>
+        <div class="w-14 h-20 p-3 text-center mx-auto">
+          <img src="img/logo.svg" alt="" />
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-semibold py-5">Sing Up to new Account</p>
+        </div>
+
+        <form id="signup-form" class="w-full flex flex-col gap-5">
+          <div class="relative">
+            <input
+              type="text"
+              name="useName"
+              id="user-input"
+              class="user block cursor-pointer text-left px-8 w-full rounded border py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="Usename"
+            />
+            <div
+              class="absolute inset-y-0 px-3 mr-2 flex items-center pointer-events-none"
+            >
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="16"
+                  height="16"
+                  transform="translate(0 0.5)"
+                  fill="white"
+                  fill-opacity="0.01"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1.04375 4.61063C1.13197 4.22409 1.34882 3.87896 1.65881 3.63177C1.96879 3.38458 2.35352 3.24997 2.75 3.25H13.25C13.6465 3.24997 14.0312 3.38458 14.3412 3.63177C14.6512 3.87896 14.868 4.22409 14.9563 4.61063L8 8.86225L1.04375 4.61063ZM1 5.60987V11.8259L6.07762 8.71263L1 5.60987ZM6.91587 9.22625L1.16713 12.7499C1.30916 13.0494 1.53334 13.3024 1.81356 13.4794C2.09378 13.6565 2.41853 13.7503 2.75 13.75H13.25C13.5814 13.7501 13.906 13.656 14.1861 13.4788C14.4662 13.3016 14.6902 13.0485 14.832 12.749L9.08325 9.22538L8 9.88775L6.91587 9.22538V9.22625ZM9.92237 8.7135L15 11.8259V5.60987L9.92237 8.71263V8.7135Z"
+                  fill="#6C757D"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="relative password flex">
+            <input
+              type="password"
+              name="password"
+              id="password-input"
+              class="block text-left cursor-pointer px-8 w-full rounded border py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="password"
+            />
+            <div
+              class="absolute inset-y-0 px-3 mr-2 flex items-center pointer-events-none"
+            >
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="16"
+                  height="16"
+                  transform="translate(0 0.5)"
+                  fill="white"
+                  fill-opacity="0.01"
+                />
+                <g clip-path="url(#clip0_1_2552)">
+                  <path
+                    d="M3.1875 9.375C3.1875 8.91087 3.37187 8.46575 3.70006 8.13756C4.02825 7.80937 4.47337 7.625 4.9375 7.625H11.0625C11.5266 7.625 11.9717 7.80937 12.2999 8.13756C12.6281 8.46575 12.8125 8.91087 12.8125 9.375V13.75C12.8125 14.2141 12.6281 14.6592 12.2999 14.9874C11.9717 15.3156 11.5266 15.5 11.0625 15.5H4.9375C4.47337 15.5 4.02825 15.3156 3.70006 14.9874C3.37187 14.6592 3.1875 14.2141 3.1875 13.75V9.375Z"
+                    fill="#6C757D"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.9375 5C4.9375 4.18777 5.26016 3.40882 5.83449 2.83449C6.40882 2.26016 7.18777 1.9375 8 1.9375C8.81223 1.9375 9.59118 2.26016 10.1655 2.83449C10.7398 3.40882 11.0625 4.18777 11.0625 5V7.625H10.1875V5C10.1875 4.41984 9.95703 3.86344 9.5468 3.4532C9.13656 3.04297 8.58016 2.8125 8 2.8125C7.41984 2.8125 6.86344 3.04297 6.4532 3.4532C6.04297 3.86344 5.8125 4.41984 5.8125 5V7.625H4.9375V5Z"
+                    fill="#6C757D"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2552">
+                    <rect
+                      width="14"
+                      height="14"
+                      fill="white"
+                      transform="translate(1 1.5)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div
+              id="password-eye"
+              class="absolute inset-y-0 px-3 mr-2 flex items-center cursor-pointer right-0"
+            >
+              <svg
+                width="14"
+                height="15"
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.44125 11.798L8.029 10.3849C7.48286 10.5801 6.8925 10.6163 6.32662 10.4891C5.76073 10.362 5.24259 10.0768 4.83247 9.66666C4.42235 9.25654 4.13712 8.73839 4.00998 8.17251C3.88283 7.60662 3.91899 7.01626 4.11425 6.47012L2.31175 4.66762C0.82075 5.99325 0 7.5 0 7.5C0 7.5 2.625 12.3125 7 12.3125C7.84035 12.3096 8.6712 12.1345 9.44125 11.798ZM4.55875 3.202C5.3288 2.8655 6.15964 2.69039 7 2.6875C11.375 2.6875 14 7.5 14 7.5C14 7.5 13.1784 9.00588 11.6891 10.3333L9.88488 8.529C10.0801 7.98286 10.1163 7.3925 9.98915 6.82662C9.862 6.26073 9.57678 5.74258 9.16666 5.33247C8.75654 4.92235 8.23839 4.63712 7.67251 4.50998C7.10662 4.38283 6.51626 4.41899 5.97013 4.61425L4.55875 3.20288V3.202Z"
+                  fill="#6C757D"
+                />
+                <path
+                  d="M4.83457 7.19022C4.78644 7.52649 4.81728 7.86935 4.92466 8.19163C5.03204 8.51391 5.213 8.80676 5.4532 9.04696C5.69341 9.28716 5.98625 9.46812 6.30853 9.5755C6.63081 9.68288 6.97367 9.71373 7.30994 9.6656L4.83369 7.19022H4.83457ZM9.16582 7.80972L6.69044 5.33347C7.02672 5.28534 7.36958 5.31618 7.69186 5.42356C8.01414 5.53094 8.30698 5.7119 8.54719 5.95211C8.78739 6.19231 8.96835 6.48515 9.07573 6.80743C9.18311 7.12971 9.21395 7.47257 9.16582 7.80885V7.80972Z"
+                  fill="#6C757D"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.9404 13.0598L1.44043 2.55981L2.05993 1.94031L12.5599 12.4403L11.9404 13.0598Z"
+                  fill="#6C757D"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="flex mt-1 h-10">
+            <a
+              class="text-lg font-semibold hover:underline text-black mx-auto"
+              href="/login"
+              >login</a
+            >
+          </div>
+          <div class="flex flex-col items-end justify-end h-[25rem]">
+            <button
+              class="text-white w-full h-12 rounded-full bg-[#212529] border botder-[#212529]"
+              type="submit"
+            >
+              signup
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/main.ts"></script>
+    <script defer type="module" src="/script/signup.ts"></script>
+  </body>
+</html>

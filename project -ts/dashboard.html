@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex flex-col justify-center gap-7 px-3 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-4 justify-center">
+            <div class="left flex flex-col">
+              <p class="text-gray-400" id="sayHello"></p>
+              <p class="font-semibold" id="show-user"></p>
+            </div>
+            <div class="flex flex-col items-center">
+              <button
+                id="logout-btn"
+                class="border border-black rounded-lg p-2 text-xs font-medium"
+              >
+                log out
+              </button>
+            </div>
+          </div>
+          <div class="right flex gap-3">
+            <span>
+              <img src="img/bell.svg" alt="" />
+            </span>
+            <span>
+              <img src="img/heart.svg" alt="" />
+            </span>
+          </div>
+        </div>
+        <div class="relative">
+          <input
+            type="text"
+            name="search"
+            id="search-input"
+            class="block cursor-pointer text-left px-8 w-full rounded border py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="Search"
+          />
+          <div
+            class="absolute inset-y-0 px-3 mr-2 flex items-center pointer-events-none"
+          >
+            <img src="img/input-prefix.svg" alt="" />
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <p class="font-semibold text-xl">Most Popular</p>
+          <p class="font-semibold text-base">See All</p>
+        </div>
+        <div class="flex gap-2 overflow-x-auto py-2" id="btnBrand"></div>
+        <div class="grid grid-cols-2 gap-2" id="listSnekears"></div>
+        <div
+          class="text-center flex justify-center gap-2"
+          id="pagination"
+        ></div>
+        <div class="flex items-start justify-center gap-10">
+          <div class="flex flex-col items-center">
+            <img src="img/house-door-fill.svg" alt="" />
+            <p class="font-semibold text-xs">Home</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="img/cart2.svg" alt="" />
+            <p class="font-semibold text-xs">Cart</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="img/bag.svg" alt="" />
+            <p class="font-semibold text-xs">Orders</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="img/wallet2.svg" alt="" />
+            <p class="font-semibold text-xs">Wallet</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="img/person.svg" alt="" />
+            <p class="font-semibold text-xs">Profile</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.ts"></script>
+    <script type="module" src="script/dashboard.ts"></script>
+  </body>
+</html>
