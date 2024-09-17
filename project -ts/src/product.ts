@@ -4,16 +4,16 @@ import { errorHandler } from "../libs/errorhandler";
 let quantity: number = 0;
 let price:number = 0;
 
-// function getQueryParameter(name){
-//     const urlParams=new  URLSearchParams(window.location.search);
-//     console.log(window.location);
-//     console.log(window.location.search);
-//     console.log(urlParams);
-//     console.log(urlParams.get(name));
-//     return urlParams.get(name);
-// }
-// const selectedProductId=getQueryParameter("id");
-// if(selectedProductId) SneakersItem(selectedProductId)
+function getQueryParameter(value:string){
+    const urlParams=new  URLSearchParams(window.location.search);
+    // console.log(window.location);
+    // console.log(window.location.search);
+    // console.log(urlParams);
+    // console.log(urlParams.get(name));
+    return urlParams.get(value);
+}
+const selectedProductId=getQueryParameter("id");
+if(selectedProductId) SneakersItem(selectedProductId)
 //get item
 export async function SneakersItem(id: string) {
   try {
@@ -82,7 +82,7 @@ function updateQuantity(change: number) {
  total.innerText = `$${price * quantity}.00`;
 }
 
-const selectedProductId = localStorage.getItem("selectedProductId");
-if (selectedProductId) {
-  SneakersItem(selectedProductId);
-}
+// const selectedProductId = localStorage.getItem("selectedProductId");
+// if (selectedProductId) {
+//   SneakersItem(selectedProductId);
+// }

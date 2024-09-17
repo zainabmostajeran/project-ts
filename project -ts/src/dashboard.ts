@@ -1,4 +1,3 @@
-
 import {
   getSneakers,
   getSneakersBrand,
@@ -53,8 +52,8 @@ async function fetchSneakerInfo() {
       search: currentSearch,
       brands: selectedBrands,
     };
-    const response = (await getSneakers(params)) as SneakerResponse ;
-      if (response.data.length === 0) {
+    const response = (await getSneakers(params)) as SneakerResponse;
+    if (response.data.length === 0) {
       listSnekears.classList.remove("grid");
       listSnekears.innerHTML =
         '<div class="flex flex-col items-center text-center "><img class="w-full" src="img/notfound.png"><p class="font-bold text-xl">Not found</p><p>sorry the keyword your entered cannot be found.</p></div>';
@@ -71,7 +70,7 @@ async function fetchSneakerInfo() {
 }
 fetchSneakerInfo();
 //render
-function renderSneakers(sneakers:sneaker[]) {
+function renderSneakers(sneakers: sneaker[]) {
   let render = sneakers.map((el, index) => generateRowSneakerInfo(el, index));
   listSnekears.innerHTML = render.join("");
 }
@@ -93,16 +92,16 @@ listSnekears.addEventListener("click", function (event: Event) {
   const target = (event.target as HTMLElement).closest(".product-link");
   if (target) {
     const card = target.closest(".card") as HTMLElement;
-    const productId= card.getAttribute("data-id")!;
-    localStorage.setItem("selectedProductId", productId);
-    window.location.href = "mahsol";
-    // window.location.href = `/mahsol?id=${productId}`;
+    const productId = card.getAttribute("data-id")!;
+    // localStorage.setItem("selectedProductId", productId);
+    // window.location.href = "mahsol";
+    window.location.href = `/product?id=${productId}`;
   }
 });
 // get brand
 async function fetchBrands() {
   try {
-    const response =(await getSneakersBrand()) as string[] ;
+    const response = (await getSneakersBrand()) as string[];
     console.log(response);
     let renderBrand = response.map((el: string, index: number) => {
       return generateBrand(el, index);
@@ -166,7 +165,7 @@ function changePage(page: number) {
   fetchSneakerInfo();
 }
 //search
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number) {
+function debounce<T extends (...args: any) => void>(func: T, delay: number) {
   let timeoutId: number | undefined;
   return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     if (timeoutId) {
