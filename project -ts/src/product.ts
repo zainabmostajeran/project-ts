@@ -19,18 +19,18 @@ export async function SneakersItem(id: string) {
   try {
     const response = await getSneakersItem(id);
     console.log(response);
-    const image = document.querySelector(".container img") as HTMLImageElement;
+    const image =<HTMLImageElement> document.querySelector(".container img") ;
     image.src = response.imageURL;
-    const category = document.querySelector(
+    const category =<HTMLParagraphElement> document.querySelector(
       ".font-bold.text-xl"
-    ) as HTMLParagraphElement;
+    ) ;
     category.innerText = response.category;
-    const sold = document.querySelector(
+    const sold =<HTMLButtonElement> document.querySelector(
       ".bg-gray-300.p-2.rounded-lg.text-sm"
-    ) as HTMLButtonElement;
+    );
     sold.innerText = `5.371 sold`;
 
-    const imgStar = document.querySelector(".w-4.h-4") as HTMLImageElement;
+    const imgStar =<HTMLImageElement> document.querySelector(".w-4.h-4");
     imgStar.src = "img/star-outline.svg";
     const review = document.querySelector(
       ".flex.items-center.gap-1 p"
@@ -38,9 +38,9 @@ export async function SneakersItem(id: string) {
     review.innerText = `4.3 (5.389 reviews)`;
 
     const colors = response.colors.split("|");
-    const colorContainer = document.querySelector(
+    const colorContainer =<HTMLDivElement> document.querySelector(
       ".flex.items-start.w-44.overflow-x-auto"
-    ) as HTMLDivElement;
+    );
     colorContainer.innerHTML = colors
       .map((color: string) => {
         return `<button
@@ -51,23 +51,27 @@ export async function SneakersItem(id: string) {
       .join("");
 
     const sizes = response.sizes.split("|");
-    const sizeContainer = document.querySelector(
+    const sizeContainer =<HTMLDivElement> document.querySelector(
       ".flex.gap-2.items-start"
-    ) as HTMLDivElement;
+    );
+
     sizeContainer.innerHTML = sizes
       .map((size: number) => {
         return ` <button class="rounded-full border border-gray-600 px-2 py-1">${size}</button>`;
       })
       .join("");
+      // sizeContainer.addEventListener("click",()=>{
+      
+      // })
     //set quantity
     price= response.price;
-    const increase = document.querySelector(
+    const increase =<HTMLParagraphElement> document.querySelector(
       '[data-action="increase"]'
-    ) as HTMLParagraphElement;
+    );
     increase.addEventListener("click", () => updateQuantity(1));
-    const decrease = document.querySelector(
+    const decrease =<HTMLParagraphElement> document.querySelector(
       '[data-action="decrease"]'
-    ) as HTMLParagraphElement;
+    );
     decrease.addEventListener("click", () => updateQuantity(-1));
   } catch (error) {
     errorHandler(error);
@@ -76,9 +80,9 @@ export async function SneakersItem(id: string) {
 }
 function updateQuantity(change: number) {
   quantity = Math.max(0, quantity + change);
-  const result =document.querySelector("#quantity") as HTMLParagraphElement;
+  const result = <HTMLParagraphElement>document.querySelector("#quantity") ;
   result.innerText = quantity.toString();
- const total= document.querySelector("#totalPrice")as HTMLParagraphElement;
+ const total=<HTMLParagraphElement> document.querySelector("#totalPrice") ;
  total.innerText = `$${price * quantity}.00`;
 }
 
