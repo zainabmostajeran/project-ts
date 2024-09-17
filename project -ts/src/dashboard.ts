@@ -21,19 +21,17 @@ type userInfo = {
   username: string;
 };
 
-const listSnekears = document.getElementById("listSnekears") as HTMLDivElement;
-const btnBrand = document.getElementById("btnBrand") as HTMLDivElement;
-const searchInput = document.getElementById("search-input") as HTMLInputElement;
-const paginationElement = document.getElementById(
-  "pagination"
-) as HTMLDivElement;
+const listSnekears = <HTMLDivElement>document.getElementById("listSnekears");
+const btnBrand = <HTMLDivElement>document.getElementById("btnBrand");
+const searchInput = <HTMLInputElement>document.getElementById("search-input");
+const paginationElement = <HTMLDivElement>document.getElementById("pagination");
 
 let currentPage = 1;
 let itemsPerPage = 10;
 let currentSearch = "";
 let selectedBrands: string[] = [];
 
-let showUser = document.getElementById("show-user") as HTMLParagraphElement;
+let showUser = <HTMLParagraphElement>document.getElementById("show-user");
 export async function fetchUserInfo() {
   try {
     const response = (await getUserInfo()) as userInfo;
@@ -52,7 +50,7 @@ async function fetchSneakerInfo() {
       search: currentSearch,
       brands: selectedBrands,
     };
-    const response = (await getSneakers(params)) as SneakerResponse;
+    const response = (await getSneakers(params)) as any;
     if (response.data.length === 0) {
       listSnekears.classList.remove("grid");
       listSnekears.innerHTML =
@@ -89,9 +87,9 @@ function generateRowSneakerInfo(sneaker: sneaker, index: number) {
 }
 
 listSnekears.addEventListener("click", function (event: Event) {
-  const target = (event.target as HTMLElement).closest(".product-link");
+  const target = (<HTMLElement>event.target).closest(".product-link");
   if (target) {
-    const card = target.closest(".card") as HTMLElement;
+    const card = <HTMLElement>target.closest(".card");
     const productId = card.getAttribute("data-id")!;
     // localStorage.setItem("selectedProductId", productId);
     // window.location.href = "mahsol";
@@ -126,13 +124,13 @@ function generateBrand(brand: string, index: number) {
 // filter
 function handleBrandFilter() {
   btnBrand.addEventListener("click", (event: Event) => {
-    const filter = (event.target as HTMLElement).dataset.filter;
+    const filter = (<HTMLElement>event.target).dataset.filter;
     if (filter) {
       const brandButtons = btnBrand.querySelectorAll(".filter");
       brandButtons.forEach((button) => {
         button.classList.remove("text-white", "bg-gray-800");
       });
-      (event.target as HTMLElement).classList.add("text-white", "bg-gray-800");
+      (<HTMLElement>event.target).classList.add("text-white", "bg-gray-800");
       selectedBrands = filter === "All" ? [] : [filter];
       currentPage = 1;
       fetchSneakerInfo();
@@ -184,7 +182,7 @@ const debouncedSearch = debounce(() => {
 
 searchInput.addEventListener("input", debouncedSearch);
 //say hello
-let sayHello = document.getElementById("sayHello") as HTMLParagraphElement;
+let sayHello = <HTMLParagraphElement>document.getElementById("sayHello");
 const greeting = ["Good Morning", "Good Afternoon", "Good Evening"];
 const currentHours = new Date().getHours();
 let index =
@@ -195,7 +193,7 @@ let index =
     : 2;
 sayHello.innerText = greeting[index];
 // log out
-const logOut = document.getElementById("logout-btn") as HTMLButtonElement;
+const logOut = <HTMLButtonElement>document.getElementById("logout-btn");
 logOut.addEventListener("click", () => {
   removeSessionToken();
   window.location.href = "/";
