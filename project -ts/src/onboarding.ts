@@ -1,4 +1,7 @@
-const swiperEl= document.querySelector("swiper-container")!;
+import Swiper from "swiper";
+const swiperEl = document.querySelector("swiper-container")! as HTMLElement & {
+  initialize: () => void;
+};
 const params = {
   injectStyles: [
     `
@@ -21,7 +24,7 @@ const params = {
   ],
   pagination: {
     clickable: true,
-    renderBullet: function (index:Number, className:string) {
+    renderBullet: function (index: number, className: string) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   },
@@ -30,15 +33,17 @@ Object.assign(swiperEl, params);
 swiperEl.initialize();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const swiper = document.querySelector(".mySwiper")as HTMLBodyElement;
-
-  // Generate pagination buttons
-  const slides = document.querySelectorAll(".mySwiper swiper-slide");
+  const swiper = document.querySelector(".mySwiper") as swiper;
+  const slides = document.querySelectorAll(
+    ".mySwiper swiper-slide"
+  ) as NodeListOf<HTMLElement>;
   const nextButton = document.getElementById("nextSlide") as HTMLButtonElement;
-  const paginationContainer = document.querySelector(".custom-pagination")as HTMLBodyElement;
+  const paginationContainer = document.querySelector(
+    ".custom-pagination"
+  ) as HTMLElement;
   paginationContainer.classList.add("flex", "gap-2", "justify-center", "mt-6");
 
-  slides.forEach((slide, index:Number) => {
+  slides.forEach((slide, index: number) => {
     const button = document.createElement("button");
     button.classList.add(
       "pagination-button",
@@ -57,12 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
     paginationContainer.appendChild(button);
   });
 
-  // Function to update the active pagination button
   function updateActivePagination() {
-    const activeIndex:Number= swiper.realIndex;
+    const activeIndex = swiper.realIndex;
     const buttons = document.querySelectorAll(".pagination-button");
 
-    buttons.forEach((button, index) => {
+    buttons.forEach((button, index: number) => {
       if (index === activeIndex) {
         button.classList.add("active", "bg-[#212529]");
       } else {

@@ -1,13 +1,13 @@
 import { httpClient } from "../client";
 import { urls } from "../urls";
 
-type paramsDeclaration={
+ export type paramsDeclaration={
     page:number,
     limit:number,
     search:string,
-    brands:[]
+    brands:string[];
 }
- export type sneakersResponse={
+ export type Sneaker={
     brand:string,
     category:string,
     color:string,
@@ -19,21 +19,26 @@ type paramsDeclaration={
     price:number,
     size:string
 }
+export type SneakersResponse={
+  data:Sneaker[];
+  totalPage:number;
+}
 export async function getSneakers({
   page = 1,
   limit = 10,
   search = "",
   brands = []
-}:paramsDeclaration):Promise<sneakersResponse> {
+}:paramsDeclaration):Promise<SneakersResponse> {
   const params = new URLSearchParams();
   params.append("page", page.toString());
   params.append("limit", limit.toString());
   if (search) params.append("search", search);
   if (brands.length > 0) params.append("brands", brands.join(","));
+
   const response = await httpClient().get(
     `${urls.sneaker.new}?${params.toString()}`
   );
-  return response.data;
+  return response.data as SneakersResponse;
 }
 export async function getSneakersBrand() {
   const response = await httpClient().get(urls.sneaker.brands);

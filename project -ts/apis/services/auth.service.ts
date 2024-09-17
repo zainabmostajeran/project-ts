@@ -1,7 +1,7 @@
 import { httpClient } from "../client";
 import { urls } from "../urls";
 
-type userCredential={
+ type userCredential={
   username:string;
   password:string;
 }
