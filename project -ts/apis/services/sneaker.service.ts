@@ -8,21 +8,15 @@ export type ParamsDeclaration = {
   brands: string[];
 };
 export type Sneaker = {
-  brand: string;
-  category: string;
-  color: string;
-  gender: string;
   id: number;
   imageURL: string;
   name: string;
-  pid: number;
   price: number;
-  size: string;
 };
-export type SneakersResponse = {
-  data: Sneaker[];
-  totalPage: number;
-};
+// export type SneakersResponse = {
+//   data: Sneaker[];
+//   totalPages: number;
+// };
 export async function getSneakers({
   page = 1,
   limit = 10,
