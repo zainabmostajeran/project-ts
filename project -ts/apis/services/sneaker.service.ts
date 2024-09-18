@@ -13,10 +13,10 @@ export type Sneaker = {
   name: string;
   price: number;
 };
-// export type SneakersResponse = {
-//   data: Sneaker[];
-//   totalPages: number;
-// };
+export type SneakersResponse = {
+  data: Sneaker[];
+  totalPages: number;
+};
 export async function getSneakers({
   page = 1,
   limit = 10,

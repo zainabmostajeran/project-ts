@@ -3,7 +3,7 @@ import {
   getSneakersBrand,
   ParamsDeclaration,
   Sneaker,
-
+  SneakersResponse
 } from "../apis/services/sneaker.service";
 import { getUserInfo } from "../apis/services/user.service";
 import { errorHandler } from "../libs/errorhandler";
