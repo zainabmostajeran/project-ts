@@ -9,45 +9,52 @@
   <body>
     <div class="container">
       <div class="flex flex-col justify-center gap-8">
-        <swiper-container
-          class="mySwiper w-full"
-          init="false"
-          loop="false"
-          pagination="false"
+        <div class="swiper mySwiper w-full">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide text-center bg-white flex items-center justify-center"
+            >
+              <img
+                class="block w-full h-full object-cover"
+                src="img/WallpaperDog-20397673 1.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide text-center bg-white flex items-center justify-center"
+            >
+              <img
+                class="block w-full h-full object-cover"
+                src="img/WallpaperDog-20534536 1.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="swiper-slide text-center bg-white flex items-center justify-center"
+            >
+              <img
+                class="block w-full h-full object-cover"
+                src="img/WallpaperDog-20534715 1.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bottom-div flex flex-col gap-3 pb-3 font-semibold px-2 relative"
         >
-          <swiper-slide
-            class="text-center bg-white flex items-center justify-center"
-            ><img
-              class="block w-full h-full object-cover"
-              src="img/WallpaperDog-20397673 1.png"
-              alt=""
-          /></swiper-slide>
-          <swiper-slide
-            class="text-center bg-white flex items-center justify-center"
-            ><img
-              class="block w-full h-full object-cover"
-              src="img/WallpaperDog-20534536 1.png"
-              alt=""
-          /></swiper-slide>
-          <swiper-slide
-            class="text-center bg-white flex items-center justify-center"
-            ><img
-              class="block w-full h-full object-cover"
-              src="img/WallpaperDog-20534715 1.jpg"
-              alt=""
-          /></swiper-slide>
-        </swiper-container>
-        <div class="bottom-div flex flex-col gap-3 pb-3 font-semibold px-2">
           <div class="font-semibold text-2xl text-center py-4">
             <p>Let’s fulfill your fashion needs with shoearight now!</p>
           </div>
-          <div class="custom-pagination flex pt-4"></div>
-          <div class="flex flex-col items-end pt-12 pb-2 px-2">
+          <div class="swiper-pagination mb-28"></div>
+
+          <div class="flex flex-col items-end pt-24 pb-2 px-2">
             <button
               id="nextSlide"
               class="text-white w-full h-12 rounded-full bg-[#212529] border border-[#212529]"
             >
-              <a href=""> Next </a>
+              Next
             </button>
           </div>
         </div>

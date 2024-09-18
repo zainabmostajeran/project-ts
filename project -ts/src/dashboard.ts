@@ -50,7 +50,7 @@ async function fetchSneakerInfo() {
       search: currentSearch,
       brands: selectedBrands,
     };
-    const response = (await getSneakers(params)) as any;
+    const response = (await getSneakers(params))as SneakerResponse ;
     if (response.data.length === 0) {
       listSnekears.classList.remove("grid");
       listSnekears.innerHTML =
@@ -105,7 +105,7 @@ async function fetchBrands() {
       return generateBrand(el, index);
     });
     btnBrand.innerHTML =
-      `<button class="filter border border-black rounded-full px-7 text-white bg-gray-800 py-1 font-semibold text-base" data-filter="All">All</button>` +
+      `<button class="filter border border-black rounded-full  px-7 text-white bg-gray-800 py-1 font-semibold text-base" data-filter="All">All</button>` +
       renderBrand.join("");
     handleBrandFilter();
   } catch (error) {
@@ -117,7 +117,7 @@ fetchBrands();
 // generateBrand
 function generateBrand(brand: string, index: number) {
   return `<button
-    class="filter border border-5 border-black text-nowrap max-w-72 h-14 rounded-full px-5 py-1 font-bold text-base " data-index="${index}"
+    class="filter border border-5 border-black text-nowrap  max-w-72 h-14 rounded-full px-5 py-1 font-bold text-base " data-index="${index}"
     data-filter="${brand}">${brand}
     </button>`;
 }
